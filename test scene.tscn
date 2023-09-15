@@ -1,3 +1,152 @@
-[gd_scene format=3 uid="uid://ns7a51jnqbrk"]
+[gd_scene load_steps=15 format=3 uid="uid://ns7a51jnqbrk"]
+
+[ext_resource type="Script" path="res://Character.gd" id="1_6ht3g"]
+[ext_resource type="Texture2D" uid="uid://dn4ws5yul1oph" path="res://tileset.png" id="1_yo0of"]
+[ext_resource type="Texture2D" uid="uid://cl5i667wgwelq" path="res://wizard1.png" id="2_kldel"]
+[ext_resource type="Texture2D" uid="uid://cuwi4lfoh1jsd" path="res://wizard2.png" id="3_hyly2"]
+[ext_resource type="Script" path="res://enemy.gd" id="5_264wm"]
+[ext_resource type="Texture2D" uid="uid://bb4drmasdit82" path="res://zombie1.png" id="5_a0xua"]
+[ext_resource type="Texture2D" uid="uid://7f1lyqtm8d" path="res://zombie2.png" id="6_sv7y0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n84xi"]
+texture = ExtResource("1_yo0of")
+texture_region_size = Vector2i(10, 10)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, -3.8007, -3.88909, -3.88909, -3.97748, 5, -5, 5)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.97748, -5, -3.97748, 4.06586, 5, 4.15425, 5, 5, -5, 5)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, 5, 3.97748, 5, 3.97748, -4.06586, -5, -4.06586)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.88909, 3.88909, 3.97748, -5, 5, -5, 5, 5, -5, 5, -5, 4.06586)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.15425, -5, 5, -5, 5, 5, 4.06586, 5)
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, -3.97748, -5, -4.06586)
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -4.06586, -5, -4.06586, 5, -5, 5)
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 4.06586, 5, 4.06586, 5, 5, -5, 5)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qsyll"]
+
+[sub_resource type="TileSet" id="TileSet_a35e7"]
+tile_size = Vector2i(10, 10)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n84xi")
+sources/1 = SubResource("TileSetScenesCollectionSource_qsyll")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndem"]
+size = Vector2(72, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viqyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kldel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kldel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hyly2")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bekfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a0xua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a0xua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sv7y0")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ohj"]
+size = Vector2(72, 90.6666)
 
 [node name="test scene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_a35e7")
+format = 2
+layer_0/tile_data = PackedInt32Array(131075, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 327682, 196608, 0, 65538, 131072, 0, 327686, 327680, 0, 65542, 262144, 0, 131074, 524288, 0, 196610, 524288, 0, 262146, 524288, 0, 327683, 589824, 0, 327684, 589824, 0, 327685, 589824, 0, 131078, 393216, 0, 196614, 393216, 0, 262150, 393216, 0, 65539, 458752, 0, 65540, 458752, 0, 65541, 458752, 0)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(306, 157)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_6ht3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-2.66666, 7.5)
+shape = SubResource("RectangleShape2D_2ndem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_viqyu")
+frame_progress = 0.170512
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(436, 341)
+script = ExtResource("5_264wm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+position = Vector2(5.33331, -4)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_bekfp")
+animation = &"walking"
+frame_progress = 0.577266
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_x8ohj")
