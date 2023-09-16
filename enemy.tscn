@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq8uooubmr7c6"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_1kb2x"]
+[ext_resource type="Texture2D" uid="uid://bb4drmasdit82" path="res://zombie1.png" id="2_cisil"]
+[ext_resource type="Texture2D" uid="uid://7f1lyqtm8d" path="res://zombie2.png" id="3_qkaoc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bekfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cisil")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cisil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qkaoc")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_3vkt7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5ak83"]
+resource_name = "on_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1.04221e-05),
+"update": 1,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gc34"]
+_data = {
+"RESET": SubResource("Animation_3vkt7"),
+"on_hit": SubResource("Animation_5ak83")
+}
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+position = Vector2(436, 341)
+script = ExtResource("1_1kb2x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.33331, -4)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_bekfp")
+animation = &"walking"
+frame_progress = 0.577266
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6gc34")
+}

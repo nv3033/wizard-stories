@@ -1,14 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://ns7a51jnqbrk"]
+[gd_scene load_steps=8 format=3 uid="uid://ns7a51jnqbrk"]
 
-[ext_resource type="Script" path="res://Character.gd" id="1_6ht3g"]
 [ext_resource type="Texture2D" uid="uid://dn4ws5yul1oph" path="res://tileset.png" id="1_yo0of"]
-[ext_resource type="Texture2D" uid="uid://cl5i667wgwelq" path="res://wizard1.png" id="2_kldel"]
-[ext_resource type="Texture2D" uid="uid://cuwi4lfoh1jsd" path="res://wizard2.png" id="3_hyly2"]
-[ext_resource type="Script" path="res://enemy.gd" id="5_264wm"]
-[ext_resource type="Texture2D" uid="uid://bb4drmasdit82" path="res://zombie1.png" id="5_a0xua"]
-[ext_resource type="Texture2D" uid="uid://djx402xyu3jl3" path="res://sword.png" id="5_yriwd"]
-[ext_resource type="Texture2D" uid="uid://7f1lyqtm8d" path="res://zombie2.png" id="6_sv7y0"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="8_mehnb"]
+[ext_resource type="PackedScene" uid="uid://w3a6jfds37p2" path="res://player.tscn" id="2_kjhq4"]
+[ext_resource type="PackedScene" uid="uid://bq8uooubmr7c6" path="res://enemy.tscn" id="3_sy3ph"]
+[ext_resource type="PackedScene" uid="uid://ccou84wxqh6gt" path="res://camera_2d.tscn" id="4_yicd6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n84xi"]
 texture = ExtResource("1_yo0of")
@@ -55,6 +50,45 @@ use_texture_padding = false
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 4.06586, 5, 4.06586, 5, 5, -5, 5)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, 5, -5, 5, -4.06586, -5, -4.15425)
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -4.19845, -5, -4.11006, 5, -5, 5)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.11006, -5, 5, -5, 5, 5, 4.19845, 5)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 4.06586, 5, 4.15425, 5, 5, -5, 5)
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -5, -3.90625, -5, -4.09375, 4.125, 5, 4.1875, 5, 5, -5, 5)
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -3.8007, -5, -5, 5, -5, 5, 5, 4.03125, 5, 3.96875, -3.9375)
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.09375, -5, 5, -5, 5, 5, -5, 5, -5, 4.0625, 4.03125, 3.875)
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, -5, 5, -3.88909, -4.02167, -3.97748, -4.02167, 5, -5, 5, -5, -5)
+1:1/size_in_atlas = Vector2i(2, 2)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qsyll"]
 
@@ -64,208 +98,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n84xi")
 sources/1 = SubResource("TileSetScenesCollectionSource_qsyll")
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2n8mv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndem"]
-size = Vector2(72, 83)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bte0r"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_viqyu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_kldel")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_kldel")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_hyly2")
-}],
-"loop": true,
-"name": &"moving",
-"speed": 3.0
-}]
-
-[sub_resource type="Animation" id="Animation_e7dru"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-46.6667, -2.66667)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ot6io"]
-resource_name = "block"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.241486, 0.241486),
-"update": 0,
-"values": [Vector2(-46.667, -2.667), Vector2(-20, -2.667)]
-}
-
-[sub_resource type="Animation" id="Animation_2xh4e"]
-resource_name = "strike"
-length = 0.25
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(2.54912, 2.54912, 2.54912),
-"update": 0,
-"values": [Vector2(-46.6667, -2.66667), Vector2(-46.667, 20), Vector2(-46.667, -2.667)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -1.69297, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n15jb"]
-_data = {
-"RESET": SubResource("Animation_e7dru"),
-"block": SubResource("Animation_ot6io"),
-"strike": SubResource("Animation_2xh4e")
-}
-
-[sub_resource type="Animation" id="Animation_p37yf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_hhh1u"]
-resource_name = "on_hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8tae"]
-_data = {
-"RESET": SubResource("Animation_p37yf"),
-"on_hit": SubResource("Animation_hhh1u")
-}
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bekfp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_a0xua")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_a0xua")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_sv7y0")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 3.0
-}]
-
-[sub_resource type="Animation" id="Animation_3vkt7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_5ak83"]
-resource_name = "on_hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1.04221e-05),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gc34"]
-_data = {
-"RESET": SubResource("Animation_3vkt7"),
-"on_hit": SubResource("Animation_5ak83")
-}
-
 [node name="test scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -274,52 +106,11 @@ texture_repeat = 1
 scale = Vector2(8, 8)
 tile_set = SubResource("TileSet_a35e7")
 format = 2
-layer_0/tile_data = PackedInt32Array(131075, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 65538, 131072, 0, 131074, 524288, 0, 196610, 524288, 0, 262146, 524288, 0, 65539, 458752, 0, 65540, 458752, 0, 65541, 458752, 0, 65542, 458752, 0, 65543, 458752, 0, 65544, 458752, 0, 65545, 458752, 0, 65546, 458752, 0, 65547, 458752, 0, 65548, 458752, 0, 65549, 458752, 0, 327682, 524288, 0, 393218, 524288, 0, 458754, 524288, 0, 524290, 524288, 0, 589826, 524288, 0, 655362, 524288, 0, 65550, 262144, 0, 720898, 196608, 0, 720899, 589824, 0, 720900, 589824, 0, 720901, 589824, 0, 720902, 589824, 0, 720903, 589824, 0, 720904, 589824, 0, 720905, 589824, 0, 720906, 589824, 0, 720907, 589824, 0, 720908, 589824, 0, 720909, 589824, 0, 720910, 327680, 0, 131086, 393216, 0, 196622, 393216, 0, 262158, 393216, 0, 327694, 393216, 0, 393230, 393216, 0, 458766, 393216, 0, 524302, 393216, 0, 589838, 393216, 0, 655374, 393216, 0, 655363, 65536, 0, 589828, 65536, 0, 524293, 65536, 0, 458758, 65536, 0, 458759, 65536, 0, 393223, 65536, 0, 393224, 65536, 0, 524294, 65536, 0, 589829, 65536, 0, 655365, 65536, 0, 327689, 65536, 0, 262153, 65536, 0, 262154, 65536, 0, 393225, 65536, 0, 458760, 65536, 0, 524296, 65536, 0, 524295, 65536, 0, 327690, 65536, 0, 458761, 65536, 0, 393226, 65536, 0, 393222, 65536, 0, 327686, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327691, 65536, 0, 327692, 65536, 0, 327693, 65536, 0, 393229, 65536, 0, 393228, 65536, 0, 393227, 65536, 0, 393221, 65536, 0, 393220, 65536, 0, 393219, 65536, 0, 458755, 65536, 0, 524291, 65536, 0, 589827, 65536, 0, 655364, 65536, 0, 655366, 65536, 0, 655367, 65536, 0, 655368, 65536, 0, 655369, 65536, 0, 655370, 65536, 0, 655371, 65536, 0, 655372, 65536, 0, 655373, 65536, 0, 589837, 65536, 0, 524301, 65536, 0, 458765, 65536, 0, 458764, 65536, 0, 458763, 65536, 0, 458762, 65536, 0, 524297, 65536, 0, 589833, 65536, 0, 589832, 65536, 0, 589831, 65536, 0, 589830, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 589836, 65536, 0, 524300, 65536, 0, 524299, 65536, 0, 524298, 65536, 0, 524292, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 262150, 65536, 0, 196614, 65536, 0, 131078, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 131083, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 196621, 65536, 0, 262157, 65536, 0, 262156, 65536, 0, 262155, 65536, 0, 262152, 65536, 0, 262151, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0)
+layer_0/tile_data = PackedInt32Array(131075, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 65538, 131072, 0, 131074, 524288, 0, 196610, 524288, 0, 262146, 524288, 0, 65539, 458752, 0, 65540, 458752, 0, 65541, 458752, 0, 65542, 262144, 0, 327682, 524288, 0, 393218, 524288, 0, 458754, 524288, 0, 524290, 524288, 0, 393223, 393216, 0, 524294, 327680, 0, 393222, 65536, 0, 327686, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327687, 65536, 0, 393221, 65536, 0, 393220, 65536, 0, 393219, 65536, 0, 458755, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 262150, 65536, 0, 196614, 65536, 0, 131078, 65536, 0, 131079, 262144, 0, 262151, 65536, 0, 196615, 393216, 0, 524291, 589824, 0, 524292, 589824, 0, 524293, 589824, 0, 458759, 393216, 0, 458758, 65536, 0, 262152, 458752, 0, 262153, 458752, 0, 262154, 458752, 0, 262155, 458752, 0, 262156, 458752, 0, 327688, 589824, 0, 327689, 589824, 0, 327690, 589824, 0, 327691, 589824, 0, 327692, 589824, 0)
 metadata/_edit_group_ = true
 
-[node name="player" type="CharacterBody2D" parent="."]
-material = SubResource("CanvasItemMaterial_2n8mv")
-position = Vector2(306, 157)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("1_6ht3g")
+[node name="player" parent="." instance=ExtResource("2_kjhq4")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(-2.66666, 7.5)
-shape = SubResource("RectangleShape2D_2ndem")
+[node name="enemy" parent="." instance=ExtResource("3_sy3ph")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
-material = SubResource("CanvasItemMaterial_bte0r")
-sprite_frames = SubResource("SpriteFrames_viqyu")
-
-[node name="Sword" type="Sprite2D" parent="player/AnimatedSprite2D"]
-position = Vector2(-46.6667, -2.66667)
-texture = ExtResource("5_yriwd")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player/AnimatedSprite2D/Sword"]
-libraries = {
-"": SubResource("AnimationLibrary_n15jb")
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
-libraries = {
-"": SubResource("AnimationLibrary_i8tae")
-}
-
-[node name="enemy" type="CharacterBody2D" parent="." groups=["enemies"]]
-position = Vector2(436, 341)
-script = ExtResource("5_264wm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy"]
-position = Vector2(5.33331, -4)
-scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_bekfp")
-animation = &"walking"
-frame_progress = 0.577266
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy"]
-libraries = {
-"": SubResource("AnimationLibrary_6gc34")
-}
-
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("8_mehnb")
+[node name="Camera2D" parent="." instance=ExtResource("4_yicd6")]

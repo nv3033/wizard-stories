@@ -13,7 +13,7 @@ var previous_distance_to_player = 0
 
 
 func _ready():
-	player = get_node("/root/test scene/player") # Получаем ссылку на игрока
+	player = get_tree().get_nodes_in_group("player")[0] # Получаем ссылку на игрока
 	anim_sprite = $AnimatedSprite2D
 	anim_player = $AnimationPlayer
 
