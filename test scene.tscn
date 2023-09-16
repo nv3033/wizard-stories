@@ -93,35 +93,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="Animation" id="Animation_2xh4e"]
-resource_name = "strike"
-length = 0.25
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(2.54912, 2.54912, 2.54912),
-"update": 0,
-"values": [Vector2(-46.6667, -2.66667), Vector2(-46.667, 20), Vector2(-46.667, -2.667)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -1.69297, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_e7dru"]
 length = 0.001
 tracks/0/type = "value"
@@ -165,26 +136,40 @@ tracks/0/keys = {
 "values": [Vector2(-46.667, -2.667), Vector2(-20, -2.667)]
 }
 
+[sub_resource type="Animation" id="Animation_2xh4e"]
+resource_name = "strike"
+length = 0.25
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25),
+"transitions": PackedFloat32Array(2.54912, 2.54912, 2.54912),
+"update": 0,
+"values": [Vector2(-46.6667, -2.66667), Vector2(-46.667, 20), Vector2(-46.667, -2.667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.69297, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n15jb"]
 _data = {
 "RESET": SubResource("Animation_e7dru"),
 "block": SubResource("Animation_ot6io"),
 "strike": SubResource("Animation_2xh4e")
-}
-
-[sub_resource type="Animation" id="Animation_hhh1u"]
-resource_name = "on_hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_p37yf"]
@@ -200,6 +185,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hhh1u"]
+resource_name = "on_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i8tae"]
@@ -230,21 +230,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="Animation" id="Animation_5ak83"]
-resource_name = "on_hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1.04221e-05),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_3vkt7"]
 length = 0.001
 tracks/0/type = "value"
@@ -258,6 +243,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5ak83"]
+resource_name = "on_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1.04221e-05),
+"update": 1,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6gc34"]
